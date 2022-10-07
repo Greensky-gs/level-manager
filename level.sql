@@ -1,0 +1,7 @@
+CREATE TABLE levels (
+    guild_id VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    messages INTEGER(255) NOT NULL DEFAULT '0',
+    total INTEGER(255) NOT NULL DEFAULT '0',
+    level INTEGER(255) NOT NULL DEFAULT '0'
+)
