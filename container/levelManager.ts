@@ -41,6 +41,7 @@ export class LevelManager {
     }
     public start() {
         this.fillCache();
+        this.event();
     }
     private async fillCache() {
         this.cache = await query<level>(`SELECT * FROM levels`);
