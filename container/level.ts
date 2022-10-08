@@ -1,4 +1,4 @@
-import { LevelManager } from "./levelManager";
+import { Collection } from "discord.js";
 
 export type level = {
     guild_id: string;
@@ -6,4 +6,6 @@ export type level = {
     messages: number;
     level: number;
     total: number;
+    objectif: number;
 };
+export type CacheType = Collection<string, Collection<string, level>>
