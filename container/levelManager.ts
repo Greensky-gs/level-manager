@@ -59,10 +59,7 @@ export class LevelManager {
                 data.level++;
                 data.messages = 0;
 
-                // Increase message goal by 35% + 25 messages
-                // For 100 : 160 messages is the new goal
-                // For 160 : 241 is the new message goal
-                data.objectif = Math.floor(data.objectif * 135 / 100) + 25;
+                data.objectif = this.upgrader(data.objectif);
 
                 this.client.emit('levelUp', message, data);
             };
@@ -103,6 +100,13 @@ export class LevelManager {
             objectif: 100,
             level: 0
         };
+    }
+    private upgrader(n: number): number {
+        // Increase message goal by 35% + 25 messages
+        // For 100 : 160 messages is the new goal
+        // For 160 : 241 is the new message goal
+        
+        return Math.floor(n * 135 / 100) + 25;
     }
 }
 
